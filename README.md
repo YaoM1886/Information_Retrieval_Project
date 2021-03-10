@@ -13,7 +13,15 @@ TREC 2019 Deep Learning Document Ranking Task
 
 
 ## Error Analysis 
+Distribution of counts with different reciprocal rank values
+![image](https://github.com/YaoM1886/Information_Retrieval_Project/blob/main/images/rr_counts.png)
 
+Document length and query length of highest rank, relevant documents
+![image](https://github.com/YaoM1886/Information_Retrieval_Project/blob/main/images/doclen.png)
+
+URL depth and query length of highest rank, relevant documents
+![image]((https://github.com/YaoM1886/Information_Retrieval_Project/blob/main/images/urldep.png)
+)
 
 ## Improvement
 
