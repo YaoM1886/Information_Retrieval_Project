@@ -6,9 +6,12 @@ def prior_LM():
                                            index_col=0).sort_values(by="docid", ascending=True)
   # define log prior prob
   test_query_doc_score_url["url_prior"] = 0
-  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] == 3, "url_prior"] = np.log(0.8)
-  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] == 4, "url_prior"] = np.log(0.15)
-  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] > 4, "url_prior"] = np.log(0.05)
+  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] == 3, "url_prior"] = np.log(0.3)
+  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] == 4, "url_prior"] = np.log(0.09)
+    
+  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] > 4, "url_prior"] = np.log(0.01)
+  test_query_doc_score_url.loc[test_query_doc_score_url["url_depth"] ==9, "url_prior"] = np.log(0.6)
+
   
   # this runs an experiment to retrieve results on top100 docs
   DirLM = pt.BatchRetrieve(index, wmodel="DirichletLM", properties={"termpipelines": ""},
